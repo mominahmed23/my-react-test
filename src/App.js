@@ -1,12 +1,8 @@
-import Views from './components/views';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import LoginPage from "./components/Login";
 function App() {
-  return (
-    <>
-      <Views/>
-    </>
-  );
+  return <LoginPage />;
 }
 
 export default App;
