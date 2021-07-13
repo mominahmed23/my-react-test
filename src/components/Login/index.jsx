@@ -18,7 +18,7 @@ const LoginPage = () => {
     e.preventDefault();
     setloading(true);
     axios
-      .post("http://my-node-test2.herokuapp.com/bbtest-auth", { password })
+      .post("https://my-node-test2.herokuapp.com/bbtest-auth", { password })
       .then((res) => {
         setloading(false);
         setLoginState(true);
