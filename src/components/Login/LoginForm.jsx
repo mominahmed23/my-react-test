@@ -18,12 +18,7 @@ const LoginForm = ({ handleSubmit, onChangeHandler, password, loading }) => {
         </FormGroup>
         <div className="d-grid gap-2">
           <Button type="submit" disabled={!password.length || loading}>
-            Login{" "}
-            {loading && (
-              <Spinner animation="grow" role="status" size="sm">
-                <span className="sr-only"></span>
-              </Spinner>
-            )}
+            Login {loading && <Spinner size="sm" color="light" children="" />}
           </Button>
         </div>
       </Form>
