@@ -5,11 +5,10 @@ const LoginForm = ({ handleSubmit, onChangeHandler, password, loading }) => {
   return (
     <div className="text-center pt-4">
       <Form onSubmit={handleSubmit}>
-        <div className="mb-3 font-weight-bold">Login to your account</div>
+        <h5 className="mb-3 mt-4">Login to Your Account</h5>
         <FormGroup className="mb-2">
           <Input type="text" placeholder="Username" />
         </FormGroup>
-
         <FormGroup className="mb-2">
           <Input
             placeholder="Password"
@@ -18,31 +17,14 @@ const LoginForm = ({ handleSubmit, onChangeHandler, password, loading }) => {
           />
         </FormGroup>
         <div className="d-grid gap-2">
-          {loading ? (
-            <Button
-              type="submit"
-              color="success"
-              disabled
-              block
-              variant="success"
-            >
-              <span className="p-1">
-                <Spinner animation="grow" role="status" size="sm">
-                  <span className="sr-only"></span>
-                </Spinner>
-              </span>
-            </Button>
-          ) : (
-            <Button
-              type="submit"
-              color="success"
-              disabled={!password || loading}
-              block
-              variant="success"
-            >
-              Login
-            </Button>
-          )}
+          <Button type="submit" disabled={!password.length || loading}>
+            Login{" "}
+            {loading && (
+              <Spinner animation="grow" role="status" size="sm">
+                <span className="sr-only"></span>
+              </Spinner>
+            )}
+          </Button>
         </div>
       </Form>
     </div>
